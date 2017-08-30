@@ -49,7 +49,7 @@ Vector<2> convertToInput(DINPUT_JOYSTATE joyState)
 void drawDrone(Vector<6> x) {
 	//状態を画面上の位置に変換
 	//位置(横x[0], 縦x[2], 角度x[4])を
-	//状態の長さ1が画面上の長さ100になるようにして
+	//状態の長さ1が画面上の長さ20になるようにして
 	//上下を反転(画面は下方向がプラスなので)して中心を Width/2, Height/2 にする
 	double px = ScreenWidth/2 + x[0]*20, py = ScreenHeight/2 - x[2]*20; //縦、横位置
 	double dx = px + cos(x[4]+M_PI/2)*20, dy = py - sin(x[4]+M_PI/2)*20; //進行方向を表す線の縦、横位置

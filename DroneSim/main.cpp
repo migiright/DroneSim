@@ -17,13 +17,13 @@ int g_joypadPushedState; //押されていない状態から押されている�
 Vector<6> g_x; //システムの状態
 
 //システムのf(g_x)
-Vector<6> f(const Vector<6> x)
+Vector<6> f(const Vector<6> &x)
 {
 	return Vector<6>{x[1], 0.0, x[3], -1.0, x[5], 0.0};
 }
 
 //システムのg(g_x)
-Matrix<6, 2> g(const Vector<6> x)
+Matrix<6, 2> g(const Vector<6> &x)
 {
 	return Matrix<6, 2>{0.0, 0.0, -sin(x[4]), 0.0, 0.0, 0.0, cos(x[4]), 0.0, 0.0, 0.0, 0.0, 1.0};
 }
@@ -46,7 +46,7 @@ Vector<2> convertToInput(DINPUT_JOYSTATE joyState)
 }
 
 //機体を描画する
-void drawDrone(Vector<6> x) {
+void drawDrone(Vector<6> &x) {
 	//状態を画面上の位置に変換
 	//位置(横x[0], 縦x[2], 角度x[4])を
 	//状態の長さ1が画面上の長さ20になるようにして

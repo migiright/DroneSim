@@ -12,7 +12,7 @@
 */
 template<size_t H, size_t W>
 class Matrix
-	: boost::multipliable<Matrix<H, W>>
+	: boost::multipliable<Matrix<H, W>, double>
 {
 public:
 	constexpr static size_t Height = H; ///< 行数
